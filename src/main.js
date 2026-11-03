@@ -6,9 +6,11 @@ document.querySelector("#app").innerHTML = "<p>loading...</p>";
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`).then(response => response.json()).then(data => {
   document.querySelector("#app").innerHTML = `
         <h1>${data.title}</h1>
-        ${data.media_type = "image"? `<img src="${data.url}" />` : `<video src="${data.url}" controls></video>`}
+        ${data.media_type === "image"? `<img id="nasa_media" src="${data.url}" />` : `<video id="nasa_media" src="${data.url}" controls></video>`}
         <p>${data.explanation}</p>`
-})
+}).catch(err => {
+    document.querySelector("#app").innerHTML = `<p>Error: ${err.message}</p>`;
+});
 function handleResponse(response){
   console.log(response.title);
   document.querySelector("#app").innerHTML = "<img src="+response.url+">";
