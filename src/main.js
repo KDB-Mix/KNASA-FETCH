@@ -8,15 +8,15 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
     let media;
 
     if (data.media_type === "image") {
-      media = `<img id="media" src="${data.url}"/>`;
+      media = `<img id="media" src="${data.url}"/ style="opacity: 0; animation: slideIn .5s ease-out .3s forwards;">`;
     } else {
-      media = `<video id="media" src="${data.url}" controls></video>`;
+      media = `<video id="media" src="${data.url}" controls style="opacity: 0; animation: slideIn .5s ease-out .3s forwards;"></video>`;
     }
 
     document.querySelector("#app").innerHTML = `
-      <h1>${data.title}</h1>
+      <h1 style="opacity: 0; animation: slideIn .5s ease-out forwards;">${data.title}</h1>
       ${media}
-      <p id="explanation">${data.explanation}</p>
+      <p id="explanation" style=" opacity: 0;animation: slideIn .5s ease-out .6s forwards;">${data.explanation}</p>
     `;
   })
   .catch(err => {

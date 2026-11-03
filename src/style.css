@@ -8,12 +8,12 @@ body{
 
 #app{
   display: flex;
-  width: 70%;
-  margin: 20px auto;
+  width: 90%;
+  margin: 5% auto;
   flex-direction: column;
-  padding: 10px;
+  padding: 3%;
   align-items: center;
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 520px black;
   text-align: center;
 }
 #media{
@@ -22,4 +22,32 @@ body{
 }
 #explanation{
   font-size: 1.3rem;
+}
+#topbar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 5%;
+  padding: 2px 2%;
+  border-radius: 10px;
+  background-color: rgba(104, 102, 102, 0.293);
+  backdrop-filter: blur(10px);
+}
+.navimg{
+  width: 50px;
+}
+.navlink{
+  display: inline;
+  margin: 0 10%;
+}
+
+@keyframes slideIn {
+  from{
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
