@@ -1,6 +1,6 @@
 # KNASA-FETCH
 
-Made for a stardance mission
+Idea from a stardance mission
 ___
 Just see the image of the day from nasa and its description
 ___
