@@ -6,7 +6,11 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
   .then(response => response.json())
   .then(data => {
     let media;
-
+    if (data.title == undefined)
+    {
+      document.querySelector("#app").innerHTML =`<p id="explanation" style=" opacity: 0;animation: slideIn .5s ease-out forwards;">Error while getting info<br>Please refresh (you may need to do that a couple of times)</p>`
+    }
+    else{
     if (data.media_type === "image") {
       media = `<img id="media" src="${data.url}"/ style="opacity: 0; animation: slideIn .5s ease-out .3s forwards;">`;
     } else {
@@ -17,7 +21,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       <h1 style="opacity: 0; animation: slideIn .5s ease-out forwards;">${data.title}</h1>
       ${media}
       <p id="explanation" style=" opacity: 0;animation: slideIn .5s ease-out .6s forwards;">${data.explanation}</p>
-    `;
+    `;}
   })
   .catch(err => {
     document.querySelector("#app").innerHTML = `<p>Error: ${err.message}</p>`;
