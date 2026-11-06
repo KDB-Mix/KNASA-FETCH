@@ -1,7 +1,6 @@
 body{
   margin: 0;
   padding: 0;
-  background-image: url("https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg");
   background-size: cover;
   color: beige;
 }
@@ -39,6 +38,21 @@ body{
 .navlink{
   display: inline;
   margin: 0 10%;
+}
+#bg_image{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-image: url("https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg");
+  background-size: cover;
+  background-color: #2b2b2b;
+  background-position: center;
 }
 
 @keyframes slideIn {
